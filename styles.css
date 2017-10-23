@@ -1,5 +1,3 @@
-@charset "utf-8";
-/* CSS Document */
 html, body {
 	height: 100%;
 	width: auto;
@@ -7,17 +5,23 @@ html, body {
 }
 .landing-page {
 	height: 80%;
+	color: white;
 	background: url("images/watchandcoins.jpeg");
 	background-position: center left;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	color: white;
+}
+
+@media only screen and (max-width: 992px) {
+.landing-page {
+	background-attachment: scroll;
+}
 }
 .title {
 	height: 100%;
 	color: white;
-	padding-top: 10em;
+	padding-top: 5em;
 }
 .title h1 {
 	font-size: 15vh;
@@ -33,14 +37,12 @@ html, body {
 }
 .product-shop {
 	display: grid;
-	grid-template-columns: repeat(4, 25%);
-	grid-template-rows: repeat(4, 25%);
 	grid-column-gap: 0;
 	grid-row-gap: 0;
 }
 .watch {
 	height: 50vh;
-	width: 25vw;
+	width: 100%;
 	overflow: hidden;
 }
 .watch:hover {
@@ -57,32 +59,38 @@ html, body {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch3 {
+}
+.watch3 {
 	background: url("images/watch3.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch4 {
+}
+.watch4 {
 	background: url("images/watch4.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch5 {
+}
+.watch5 {
 	background: url("images/watch5.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch6 {
+}
+.watch6 {
 	background: url("images/watch6.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch7 {
+}
+.watch7 {
 	background: url("images/watch7.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}.watch8 {
+}
+.watch8 {
 	background: url("images/watch8.jpeg");
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -100,10 +108,30 @@ html, body {
 	padding-top: 12px;
 	font-size: 16px;
 }
+.ruler {
+	border: 2px solid black;
+	width: 60%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
 .who-we-are {
 	border: 2px solid black;
 	padding: 10px;
 }
 #cart-modal {
 	color: black;
+}
+
+@media only screen and (min-width: 64px) {
+.product-shop {
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+}
+
+@media only screen and (min-width: 1024px) {
+ .product-shop {
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr;
+}
 }

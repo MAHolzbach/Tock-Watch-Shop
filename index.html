@@ -1,331 +1,206 @@
 <!doctype html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <title>Untitled Document</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<title>Tock Timepieces</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
+<!--TODO: Style cart modal. Add checkout to cart modal. Change focus color of form elements.-->
+
 <body>
-  <!--NAV-->
-  <div class="landing-page">
-    <nav class="site-nav">
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Tock</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <a class="modal-trigger" href="#cart-modal">
-              <i class="material-icons left">shopping_cart</i>
-              <span id="cart-total">0</span>
-            </a>
-          </li>
-          <li>
-            <a href="#" id="about">About</a>
-          </li>
-          <li>
-            <a href="#" id="shop">Shop</a>
-          </li>
-          <li>
-            <a href="#" id="contact">Contact</a>
-          </li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li>
-            <a class="modal-trigger" href="#cart-modal">
-              <i class="material-icons left">shopping_cart</i>0</a>
-          </li>
-          <li>
-            <a href="sass.html">About</a>
-          </li>
-          <li>
-            <a href="badges.html">Shop</a>
-          </li>
-          <li>
-            <a href="collapsible.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!--END NAV-->
-
-    <!--CART MODAL-->
-    <div id="cart-modal" class="modal">
-      <div class="modal-content">
-        <span id="cart-total-price">$</span>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
-      </div>
+<!--NAV-->
+<div class="landing-page">
+  <nav class="site-nav">
+    <div class="nav-wrapper"> <a href="#!" class="brand-logo">Tock</a> <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="modal-trigger" href="#cart-modal"><i class="material-icons left">shopping_cart</i><span id="cart-total">0</span></a></li>
+        <li><a href="#" id="shop">Shop</a></li>
+        <li><a href="#" id="about">About</a></li>
+        <li><a href="#" id="contact">Contact</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a class="modal-trigger" href="#cart-modal"><i class="material-icons left">shopping_cart</i><span id="cart-total2">0</span></a></li>
+        <li><a href="#" id="shop2">Shop</a></li>
+        <li><a href="#" id="about2">About</a></li>
+        <li><a href="#" id="contact2">Contact</a></li>
+      </ul>
     </div>
-    <!--END CART MODAL-->
+  </nav>
+  <!--END NAV--> 
+  
+  <!--CART MODAL-->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content"> <span id="cart-total-price">$</span> </div>
+    <div class="modal-footer"> <a href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a> </div>
+  </div>
+  <!--END CART MODAL--> 
+  
+  <!--HERO-->
+  <div class="title">
+    <h1>Tock</h1>
+    <h5>Timepieces for generations</h5>
+  </div>
+</div>
+<!--END HERO--> 
 
-    <!--HERO-->
-    <div class="title">
-      <h1>Tock</h1>
-      <h5>Timepieces for generations</h5>
+<!--SHOP-->
+<div class="product-shop" id="shop-content">
+  <div class="watch watch1 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$1,125
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart1" value="1125" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
     </div>
   </div>
-  <!--END HERO-->
-
-  <!--SHOP-->
-  <div class="product-shop" id="shop-content">
-    <div class="watch watch1 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$1,125
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart1" value="1125" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch2 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$800
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart2" value="800" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch3 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$1,000
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart3" value="1000" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch4 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$500
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart4" value="500" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch5 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$1,500
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart5" value="1500" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch6 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$2,000
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart6" value="2000" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch7 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$1,750
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart7" value="1750" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
-    </div>
-    <div class="watch watch8 card">
-      <div class="card-content">
-        <span class="card-title grey-text text-darken-4">
-          <a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right">
-            <i class="material-icons down-arrow">zoom_in</i>
-          </a>
-        </span>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
-          <i class="material-icons right">arrow_downward</i>
-        </span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
-          Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos
-          porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
-          cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
-        <p>$850
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart8" value="850" onClick="onClick(value)">
-            <i class="material-icons">add_shopping_cart</i>
-          </button>
-        </p>
-      </div>
+  <div class="watch watch2 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$800
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart2" value="800" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
     </div>
   </div>
-  <!--END SHOP-->
-
-  <!--ABOUT-->
-  <div class="container" id="about-content">
-    <h1 class="center-align">Who We Are</h1>
-    <div class="row who-we-are">
-      <div class="col s12 m6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, laudantium veniam doloribus quae nostrum. Qui,
-          non voluptates rem culpa dignissimos at et molestiae nihil odit eius error minima minus consectetur obcaecati eos
-          fugiat eveniet quos. Explicabo libero cupiditate aperiam consequatur laboriosam earum placeat repellendus! Tempora,
-          dolores fugiat aspernatur provident similique magni unde excepturi reprehenderit ullam magnam blanditiis asperiores
-          deleniti maiores eos tempore delectus quis consequuntur. Sunt, ducimus reprehenderit similique assumenda est eum
-          repudiandae nihil culpa sequi possimus! Architecto, doloremque, fugit, veritatis amet debitis laudantium accusantium
-          quibusdam dolores similique odit veniam placeat officia temporibus repellat possimus eligendi officiis suscipit
-          porro error.</p>
-      </div>
-      <div class="col s12 m6">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, suscipit dolore odio veniam accusamus perferendis
-          cum! Delectus, soluta, impedit excepturi nulla laudantium amet repellat rerum saepe vel voluptates ipsum tempora
-          ipsam error neque optio veritatis consequatur corporis. Accusamus, dolores excepturi odit quos possimus exercitationem
-          sequi aliquid doloribus distinctio similique est repudiandae itaque eius eos facilis facere architecto nostrum
-          fuga totam quia qui voluptatum enim error placeat saepe debitis optio. Quasi nam facilis explicabo accusamus earum
-          non dolor. Mollitia, harum odio ut architecto suscipit exercitationem facilis eaque ullam consectetur itaque tempore
-          fugit sint! Sapiente, id, minima voluptates sunt atque praesentium ipsum?</p>
-      </div>
+  <div class="watch watch3 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$1,000
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart3" value="1000" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
     </div>
   </div>
-  <!--END ABOUT-->
+  <div class="watch watch4 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$500
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart4" value="500" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
+    </div>
+  </div>
+  <div class="watch watch5 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$1,500
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart5" value="1500" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
+    </div>
+  </div>
+  <div class="watch watch6 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$2,000
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart6" value="2000" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
+    </div>
+  </div>
+  <div class="watch watch7 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$1,750
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart7" value="1750" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
+    </div>
+  </div>
+  <div class="watch watch8 card">
+    <div class="card-content"> <span class="card-title grey-text text-darken-4"><a class="btn-floating activator btn-large waves-effect waves-light grey darken-2 right"><i class="material-icons down-arrow">zoom_in</i></a></span> </div>
+    <div class="card-reveal"> <span class="card-title grey-text text-darken-4">Watch Name<i class="material-icons right">arrow_downward</i></span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet! Voluptates porro facere labore provident? Labore, obcaecati, distinctio, quos, ratione accusantium dignissimos porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
+      <p>$850
+        <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart8" value="850" onClick="onClick(value)"><i class="material-icons">add_shopping_cart</i></button>
+      </p>
+    </div>
+  </div>
+</div>
+<!--END SHOP-->
 
-  <!--FOOTER-->
-  <footer class="page-footer grey lighten-4">
-    <div class="container">
+<hr class="ruler"/>
+
+<!--ABOUT-->
+<div class="container" id="about-content">
+  <h1 class="center-align">Who We Are</h1>
+  <div class="row who-we-are">
+    <div class="col xs12 m6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, laudantium veniam doloribus quae nostrum. Qui, non voluptates rem culpa dignissimos at et molestiae nihil odit eius error minima minus consectetur obcaecati eos fugiat eveniet quos. Explicabo libero cupiditate aperiam consequatur laboriosam earum placeat repellendus! Tempora, dolores fugiat aspernatur provident similique magni unde excepturi reprehenderit ullam magnam blanditiis asperiores deleniti maiores eos tempore delectus quis consequuntur. Sunt, ducimus reprehenderit similique assumenda est eum repudiandae nihil culpa sequi possimus! Architecto, doloremque, fugit, veritatis amet debitis laudantium accusantium quibusdam dolores similique odit veniam placeat officia temporibus repellat possimus eligendi officiis suscipit porro error.</p>
+    </div>
+    <div class="col xs12 m6">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, suscipit dolore odio veniam accusamus perferendis cum! Delectus, soluta, impedit excepturi nulla laudantium amet repellat rerum saepe vel voluptates ipsum tempora ipsam error neque optio veritatis consequatur corporis. Accusamus, dolores excepturi odit quos possimus exercitationem sequi aliquid doloribus distinctio similique est repudiandae itaque eius eos facilis facere architecto nostrum fuga totam quia qui voluptatum enim error placeat saepe debitis optio. Quasi nam facilis explicabo accusamus earum non dolor. Mollitia, harum odio ut architecto suscipit exercitationem facilis eaque ullam consectetur itaque tempore fugit sint! Sapiente, id, minima voluptates sunt atque praesentium ipsum?</p>
+    </div>
+  </div>
+</div>
+<!--END ABOUT-->
+
+<hr class="ruler"/>
+
+<!--CONTACT-->
+<div class="container" id="contact-form">
+  <div class="row">
+    <h1 class="center-align">Inquiries</h1>
+    <form class="col s12">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">Tock Timepieces</h5>
-          <p class="black-text text-lighten-4">123 Main St.
-            <br /> Alexandria, VA 22311</p>
-          <p class="black-text text-lighten-4">123-456-7890</p>
+        <div class="col s6 input-field">
+          <input id="name" type="text" />
+          <label for="name">Your Name</label>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <ul>
-            <li>
-              <a class="black-text text-lighten-3" href="#!">Link 1</a>
-            </li>
-            <li>
-              <a class="black-text text-lighten-3" href="#!">Link 2</a>
-            </li>
-            <li>
-              <a class="black-text text-lighten-3" href="#!">Link 3</a>
-            </li>
-            <li>
-              <a class="black-text text-lighten-3" href="#!">Link 4</a>
-            </li>
-          </ul>
+        <div class="col s6 input-field">
+          <input id="email" type="email" class="validate"/>
+          <label for="email">E-Mail Address</label>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright black-text">
-      <div class="container"> © 2017 Copyright Tock </div>
-    </div>
-  </footer>
-  <!--END FOOTER-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+    </form>
+  </div>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">How can we help?</label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!--END CONTACT-->
 
+<hr class="ruler"/>
+
+<!--FOOTER-->
+<footer class="page-footer grey lighten-4">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="black-text">Tock Timepieces</h5>
+        <p class="black-text text-lighten-4">123 Main St. <br />
+          Alexandria, VA 22311</p>
+        <p class="black-text text-lighten-4">123-456-7890</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <ul>
+          <li><a class="black-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="black-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="black-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="black-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright black-text">
+    <div class="container"> © 2017 Copyright Tock </div>
+  </div>
+</footer>
+<!--END FOOTER--> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
+<script type="text/javascript" src="script.js"></script>
+</body>
 </html>

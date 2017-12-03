@@ -72,27 +72,27 @@ const cartInventory = [
     totalInCart: 0
   },
   {
-    name: "Watch 3",
+    name: "Pine",
     totalInCart: 0
   },
   {
-    name: "Watch 4",
+    name: "Maple",
     totalInCart: 0
   },
   {
-    name: "Watch 5",
+    name: "Oak",
     totalInCart: 0
   },
   {
-    name: "Watch 6",
+    name: "Spruce",
     totalInCart: 0
   },
   {
-    name: "Watch 7",
+    name: "Willow",
     totalInCart: 0
   },
   {
-    name: "Watch 8",
+    name: "Redwood",
     totalInCart: 0
   }
 ];

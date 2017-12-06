@@ -10,7 +10,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<!--TODO: Style cart modal. Add checkout to cart modal. Change focus color of form elements.-->
+<!--
+  TODO: Style cart modal. 
+  TODO: Add checkout to cart modal. 
+  TODO: Change focus color of form elements. 
+  TODO: Add unit price and total price for cart modal row.
+  TODO: Add single delete button for each cart row.
+  TODO: Add clear cart button.
+-->
 
 <body>
   <!--NAV-->
@@ -62,14 +69,13 @@
     <!--CART MODAL-->
     <div id="cart-modal" class="modal">
       <div class="modal-content">
-      <h4>Your cart</h4>
-          <div id="cart-content">
-            
-            <p id="cart-total-price" class="right-align"></p>
-          </div>
+        <h4>Your cart</h4>
+        <div id="cart-content"></div>
+        <p id="cart-total-price" class="right-align"></p>
       </div>
       <div class="modal-footer">
-      	<a class="waves-effect waves-light green btn-large"><i class="material-icons right">payment</i>Checkout</a>
+        <a class="waves-effect waves-light green btn-large">
+          <i class="material-icons right">payment</i>Checkout</a>
         <a href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
       </div>
     </div>
@@ -102,7 +108,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$1,125
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart1" value="1125" name="Elm" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart1" value="1125" name="Elm" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -125,7 +131,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$800
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart2" value="800" name="Cedar" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart2" value="800" name="Cedar" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -148,7 +154,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$1,000
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart3" value="1000" name="Pine" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart3" value="1000" name="Pine" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -171,7 +177,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$500
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart4" value="500" name="Maple" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart4" value="500" name="Maple" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -194,7 +200,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$1,500
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart5" value="1500" name="Oak" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart5" value="1500" name="Oak" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -217,7 +223,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$2,000
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart6" value="2000" name="Spruce" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart6" value="2000" name="Spruce" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -240,7 +246,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$1,750
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart7" value="1750" name="Willow" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart7" value="1750" name="Willow" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>
@@ -263,7 +269,7 @@
           porro laboriosam minus reprehenderit tempore fugiat ipsum ad dolorum! Voluptatem, perspiciatis, sed corrupti enim
           cumque nihil velit esse ad voluptatum natus distinctio tempora.</p>
         <p>$850
-          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart8" value="850" name="Redwood" onClick="onClick(value, name)">
+          <button class="btn-flat waves-effect right add-to-cart" id="add-to-cart8" value="850" name="Redwood" onClick="updateCart(name, value)">
             <i class="material-icons">add_shopping_cart</i>
           </button>
         </p>

@@ -97,53 +97,38 @@ const cartInventory = [
   }
 ];
 
-/*
-  updateCart function:
-	1. Call clearOut function
-	2. Loop over cartInventory array
-	3. Increment totalInCart attribute += 1
-*/
-
-/*
-  clearOut function:
-	1. Remove all current HTML nodes in cart-content div: var myNode = document.getElementById("foo");
-	while (myNode.firstChild) {
-    	myNode.removeChild(myNode.firstChild);
-	}
-*/
-
-/*
-  renderCart function:
-    1. Loop over cartInventory array
-	2. Render a cart row html element for each object with totalInCart > 1
-*/
-
-const onClick = (value, watchName) => {
+const updateCart = (name, value) => {
   const targetValue = parseInt(value);
-  const cartContent = document.getElementById("cart-content");
-  cartItems += 1;
-  let newCartInventory = cartInventory.map(watch => {
-    if (watchName === watch.name && watch.totalInCart === 0) {
-      watch.totalInCart += 1;
-      let cartTotalPrice = document.getElementById("cart-total-price");
-      let newCartEntry = document.createElement("h5");
-	  newCartEntry.setAttribute('id', 'cart-row');
-      let newWatchAdded = document.createTextNode(
-        `${watchName} x ${watch.totalInCart}`
-      );
-      newCartEntry.appendChild(newWatchAdded);
-      cartContent.insertBefore(newCartEntry, cartTotalPrice);
-	} else if (watchName === watch.name && watch.totalInCart > 0) {
-		watch.totalInCart += 1;
-		let cartRow = document.getElementById('cart-row');
-		cartRow.innerText = `${watchName} x ${watch.totalInCart}`;
-		console.log(cartRow);
-	}
+  clearOut();
+  cartItems++;
+  cartInventory.forEach(watch => {
+    if (watch.name === name) {
+      watch.totalInCart++;
+    }
   });
   document.getElementById("cart-total").innerHTML = cartItems;
   document.getElementById("cart-total2").innerHTML = cartItems;
   cartTotalPrice += targetValue;
-  document.getElementById(
-    "cart-total-price"
-  ).innerHTML = `Cart Total: $ ${cartTotalPrice}`;
+  document.getElementById("cart-total-price").innerHTML = `Cart Total: $ ${
+    cartTotalPrice
+  }`;
+  populateCart();
+};
+
+const clearOut = () => {
+  let currentContent = document.getElementById("cart-content");
+  while (currentContent.firstChild) {
+    currentContent.removeChild(currentContent.firstChild);
+  }
+};
+
+const populateCart = () => {
+  let currentContent = document.getElementById("cart-content");
+  cartInventory.forEach(watch => {
+    if (watch.totalInCart > 0) {
+      let row = document.createElement("h5");
+      row.textContent = `${watch.totalInCart} x ${watch.name}`;
+      currentContent.appendChild(row);
+    }
+  });
 };

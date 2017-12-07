@@ -97,12 +97,14 @@ const cartInventory = [
   }
 ];
 
-const updateCart = (name, value) => {
-  const targetValue = parseInt(value);
+const updateCart = () => {
+  const targetValue = parseInt(event.currentTarget.value);
+  const targetName = event.currentTarget.name;
+  console.log(event.currentTarget.name);
   clearOut();
   cartItems++;
   cartInventory.forEach(watch => {
-    if (watch.name === name) {
+    if (watch.name === targetName) {
       watch.totalInCart++;
     }
   });
@@ -132,3 +134,14 @@ const populateCart = () => {
     }
   });
 };
+
+const addClickEvent = () => {
+  const shopButtons = document.querySelectorAll(".add-to-cart");
+  const shopButtonsArray = Array.from(shopButtons);
+
+  shopButtonsArray.forEach(button => {
+    button.addEventListener("click", updateCart, false);
+  });
+};
+
+addClickEvent();

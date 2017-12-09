@@ -14,9 +14,7 @@
   TODO: Style cart modal. 
   TODO: Add checkout to cart modal. 
   TODO: Change focus color of form elements. 
-  TODO: Add unit price and total price for cart modal row.
   TODO: Add single delete button for each cart row.
-  TODO: Add clear cart button.
 -->
 
 <body>
@@ -69,14 +67,23 @@
     <!--CART MODAL-->
     <div id="cart-modal" class="modal">
       <div class="modal-content">
-        <h4>Your cart</h4>
+        <div class="row">
+          <div class="col s11">
+            <h4>Your cart</h4>
+          </div>
+          <div class="col s1">
+            <a href="#!" class="modal-action modal-close btn-floating btn-flat btn-small white right">
+              <i class="material-icons" id="modal-closer">clear</i>
+            </a>
+          </div>
+        </div>
         <div id="cart-content"></div>
         <p id="cart-total-price" class="right-align"></p>
       </div>
       <div class="modal-footer">
-        <a class="waves-effect waves-light green btn-large">
+        <a class="waves-effect waves-light green btn-large" id="checkout-button">
           <i class="material-icons right">payment</i>Checkout</a>
-        <a href="#!" class="modal-action modal-close waves-effect btn-flat">Close</a>
+        <a class="waves-effect waves-light red btn-large left" id="empty-cart-button" onclick=fullClear()>Empty Cart</a>
       </div>
     </div>
     <!--END CART MODAL-->
@@ -100,7 +107,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Elm
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -123,7 +130,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Cedar
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -146,7 +153,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Pine
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -169,7 +176,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Maple
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -192,7 +199,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Oak
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -215,7 +222,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Spruce
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -238,7 +245,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Willow
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!
@@ -261,7 +268,7 @@
         </span>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Watch Name
+        <span class="card-title grey-text text-darken-4">Redwood
           <i class="material-icons right">arrow_downward</i>
         </span>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, qui, impedit assumenda voluptatem ullam eveniet!

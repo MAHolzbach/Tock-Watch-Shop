@@ -65,42 +65,49 @@ let cartTotalPrice = 0;
 const cartInventory = [
   {
     name: "Elm",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 1125
   },
   {
     name: "Cedar",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 800
   },
   {
     name: "Pine",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 1000
   },
   {
     name: "Maple",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 500
   },
   {
     name: "Oak",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 1500
   },
   {
     name: "Spruce",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 2000
   },
   {
     name: "Willow",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 1750
   },
   {
     name: "Redwood",
-    totalInCart: 0
+    totalInCart: 0,
+    price: 850
   }
 ];
 
 const updateCart = () => {
   const targetValue = parseInt(event.currentTarget.value);
   const targetName = event.currentTarget.name;
-  console.log(event.currentTarget.name);
   clearOut();
   cartItems++;
   cartInventory.forEach(watch => {
@@ -124,21 +131,60 @@ const clearOut = () => {
   }
 };
 
+const fullClear = () => {
+  cartItems = 0;
+  cartTotalPrice = 0;
+  document.getElementById("cart-total-price").innerHTML = `Cart Total: $ ${
+    cartTotalPrice
+  }`;
+  document.getElementById("cart-total").innerHTML = cartItems;
+  document.getElementById("cart-total2").innerHTML = cartItems;
+  cartInventory.forEach(watch => {
+    watch.totalInCart = 0;
+  });
+  clearOut();
+};
+
+const lineDelete = event => {
+  while (event.target.parentNode) {
+    event.target.parentNode.removeChild(event.target);
+  }
+};
+
 const populateCart = () => {
   let currentContent = document.getElementById("cart-content");
   cartInventory.forEach(watch => {
     if (watch.totalInCart > 0) {
+      let deleteButton = document.createElement("button");
+      deleteButton.className =
+        "btn-floating btn-flat btn-small row-delete-button";
+      let deleteIcon = document.createElement("i");
+      deleteIcon.className = "material-icons row-delete-icon";
+      deleteIcon.textContent = "close";
       let row = document.createElement("h5");
-      row.textContent = `${watch.totalInCart} x ${watch.name}`;
+      row.className = "cart-row";
+      row.textContent = `${watch.totalInCart} x ${watch.name} for $${
+        watch.price
+      } each`;
+      deleteButton.appendChild(deleteIcon);
+      row.appendChild(deleteButton);
       currentContent.appendChild(row);
     }
+  });
+  addLineDeleteClick();
+};
+
+const addLineDeleteClick = () => {
+  const deleteButtons = document.querySelectorAll(".row-delete-button");
+  const deleteButtonsArray = Array.from(deleteButtons);
+  deleteButtonsArray.forEach(button => {
+    button.addEventListener("click", lineDelete, false);
   });
 };
 
 const addClickEvent = () => {
   const shopButtons = document.querySelectorAll(".add-to-cart");
   const shopButtonsArray = Array.from(shopButtons);
-
   shopButtonsArray.forEach(button => {
     button.addEventListener("click", updateCart, false);
   });

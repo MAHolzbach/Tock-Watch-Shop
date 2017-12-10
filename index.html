@@ -68,10 +68,10 @@
     <div id="cart-modal" class="modal">
       <div class="modal-content">
         <div class="row">
-          <div class="col s11">
-            <h4>Your cart</h4>
+          <div class="col s6 m11">
+            <i class="medium material-icons left">shopping_cart</i>
           </div>
-          <div class="col s1">
+          <div class="col s6 m1">
             <a href="#!" class="modal-action modal-close btn-floating btn-flat btn-small white right">
               <i class="material-icons" id="modal-closer">clear</i>
             </a>
@@ -81,9 +81,12 @@
         <p id="cart-total-price" class="right-align"></p>
       </div>
       <div class="modal-footer">
-        <a class="waves-effect waves-light green btn-large" id="checkout-button">
-          <i class="material-icons right">payment</i>Checkout</a>
-        <a class="waves-effect waves-light red btn-large left" id="empty-cart-button" onclick=fullClear()>Empty Cart</a>
+        <form action="/charge" method="POST" id='checkout-button'>
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh" data-image=""
+            data-name="Tock">
+          </script>
+          <a class="waves-effect waves-light red btn" id="empty-cart-button" onclick=fullClear()>Empty Cart</a>
+        </form>
       </div>
     </div>
     <!--END CART MODAL-->

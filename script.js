@@ -118,9 +118,9 @@ const updateCart = () => {
   document.getElementById("cart-total").innerHTML = cartItems;
   document.getElementById("cart-total2").innerHTML = cartItems;
   cartTotalPrice += targetValue;
-  document.getElementById("cart-total-price").innerHTML = `Cart Total: $ ${
-    cartTotalPrice
-  }`;
+  document.getElementById(
+    "cart-total-price"
+  ).innerHTML = `Cart Total: $ ${cartTotalPrice}`;
   populateCart();
 };
 
@@ -134,9 +134,9 @@ const clearOut = () => {
 const fullClear = () => {
   cartItems = 0;
   cartTotalPrice = 0;
-  document.getElementById("cart-total-price").innerHTML = `Cart Total: $ ${
-    cartTotalPrice
-  }`;
+  document.getElementById(
+    "cart-total-price"
+  ).innerHTML = `Cart Total: $ ${cartTotalPrice}`;
   document.getElementById("cart-total").innerHTML = cartItems;
   document.getElementById("cart-total2").innerHTML = cartItems;
   cartInventory.forEach(watch => {
@@ -154,9 +154,9 @@ const lineDelete = event => {
     }
   });
   cartTotalPrice -= targetValue;
-  document.getElementById("cart-total-price").innerHTML = `Cart Total: $ ${
-    cartTotalPrice
-  }`;
+  document.getElementById(
+    "cart-total-price"
+  ).innerHTML = `Cart Total: $ ${cartTotalPrice}`;
   cartItems--;
   document.getElementById("cart-total").innerHTML = cartItems;
   document.getElementById("cart-total2").innerHTML = cartItems;
@@ -168,24 +168,31 @@ const populateCart = () => {
   let currentContent = document.getElementById("cart-content");
   cartInventory.forEach(watch => {
     if (watch.totalInCart > 0) {
-      let deleteButton = document.createElement("button");
-      deleteButton.className = "btn-floating btn-flat row-delete-button";
-      deleteButton.id = watch.name;
-      deleteButton.value = watch.price;
+      // let deleteButton = document.createElement("button");
+      // deleteButton.className = "btn-floating btn-flat row-delete-button";
+      // deleteButton.id = watch.name;
+      // deleteButton.value = watch.price;
 
-      let deleteIcon = document.createElement("i");
-      deleteIcon.className = "material-icons row-delete-icon";
-      deleteIcon.textContent = "close";
-
-      let row = document.createElement("h5");
-      row.className = "cart-row";
-      row.textContent = `${watch.totalInCart} x ${watch.name} for $${
+      // let deleteIcon = document.createElement("i");
+      // deleteIcon.className = "material-icons row-delete-icon";
+      // deleteIcon.textContent = "close";
+      let cartRow = document.createElement("div");
+      let row = `
+        <h2>${watch.totalInCart} x ${watch.name} for $${
         watch.price
-      } each`;
+      } each</h2><button className='btn-floating btn-flat row-delete-button'><i className='material-icons row-delete-icon'</button>
+      `;
+      // let row = document.createElement("h5");
+      // row.className = "cart-row";
+      // row.textContent = `${watch.totalInCart} x ${watch.name} for $${
+      //   watch.price
+      // } each`;
 
-      deleteButton.appendChild(deleteIcon);
-      row.appendChild(deleteButton);
-      currentContent.appendChild(row);
+      // deleteButton.appendChild(deleteIcon);
+      // row.appendChild(deleteButton);
+      // currentContent.appendChild(row);
+      cartRow.innerHTML = row;
+      currentContent.appendChild(cartRow);
     }
   });
   addLineDeleteClick();

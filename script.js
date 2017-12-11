@@ -148,8 +148,6 @@ const fullClear = () => {
 const lineDelete = event => {
   const targetValue = parseInt(event.currentTarget.value);
   const itemToRemove = event.currentTarget.id;
-  console.log(targetValue);
-  console.log(itemToRemove);
   cartInventory.forEach(watch => {
     if (watch.name === itemToRemove) {
       watch.totalInCart--;

@@ -148,6 +148,8 @@ const fullClear = () => {
 const lineDelete = event => {
   const targetValue = parseInt(event.currentTarget.value);
   const itemToRemove = event.currentTarget.id;
+  console.log(targetValue);
+  console.log(itemToRemove);
   cartInventory.forEach(watch => {
     if (watch.name === itemToRemove) {
       watch.totalInCart--;
@@ -168,29 +170,16 @@ const populateCart = () => {
   let currentContent = document.getElementById("cart-content");
   cartInventory.forEach(watch => {
     if (watch.totalInCart > 0) {
-      // let deleteButton = document.createElement("button");
-      // deleteButton.className = "btn-floating btn-flat row-delete-button";
-      // deleteButton.id = watch.name;
-      // deleteButton.value = watch.price;
-
-      // let deleteIcon = document.createElement("i");
-      // deleteIcon.className = "material-icons row-delete-icon";
-      // deleteIcon.textContent = "close";
       let cartRow = document.createElement("div");
       let row = `
-        <h2>${watch.totalInCart} x ${watch.name} for $${
+        <h5>${watch.totalInCart} x ${watch.name} for $${
         watch.price
-      } each</h2><button className='btn-floating btn-flat row-delete-button'><i className='material-icons row-delete-icon'</button>
+      } each <button class="btn-floating btn-flat row-delete-button" id=${
+        watch.name
+      } value=${
+        watch.price
+      }><i class="material-icons row-delete-icon">close</i></button></h5>
       `;
-      // let row = document.createElement("h5");
-      // row.className = "cart-row";
-      // row.textContent = `${watch.totalInCart} x ${watch.name} for $${
-      //   watch.price
-      // } each`;
-
-      // deleteButton.appendChild(deleteIcon);
-      // row.appendChild(deleteButton);
-      // currentContent.appendChild(row);
       cartRow.innerHTML = row;
       currentContent.appendChild(cartRow);
     }

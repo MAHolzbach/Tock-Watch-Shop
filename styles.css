@@ -144,8 +144,50 @@ button.row-delete-button:hover {
 #checkout-button {
   margin: 0;
 }
-.input-field {
+/* label color */
+.container .input-field input {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black;
   color: black;
+}
+.container .input-field label {
+  font-size: 22px;
+  color: black;
+}
+/* label focus color */
+.container .input-field input:focus+label {
+  color: black !important;
+}
+/* label underline focus color */
+.container .input-field input:focus {
+  border-bottom: 1px solid black !important;
+  box-shadow: 0 1px 0 0 black !important;
+}
+/* valid color */
+.container .input-field input.valid {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black;
+}
+/* invalid color */
+.container .input-field input.invalid {
+  border-bottom: 1px solid red;
+  box-shadow: 0 1px 0 0 red;
+}
+/* icon prefix focus color */
+.container .input-field .prefix.active {
+  color: black;
+}
+.container .materialize-textarea {
+  color: black;
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black;
+}
+.container .input-field textarea:focus+label {
+  color: black;
+}
+.container .input-field textarea:focus {
+  border-bottom: 1px solid black;
+  box-shadow: 0 1px 0 0 black;
 }
 @media only screen and (min-width: 64px) {
   .product-shop {
